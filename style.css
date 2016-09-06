@@ -47,10 +47,6 @@ blockquote {
 .heading header h2 {
 	font-size: 140%;
 	margin: 0;
-	font-weight: 400;
-}
-
-.heading header .contact .detail {
 	margin: 0 1em 0 0;
 }
 
@@ -121,6 +117,20 @@ section h2 {
 
 .item .date {
     display: inline-block;
+}
+
+.item .techUsed p {
+    display: inline-block;
+    margin: 0;
+}
+
+.item .techUsedTitle {
+    display: inline-block;
+    font-weight: 600;
+}
+
+.item .whatIDid {
+    font-weight: 600;
 }
 
 .item .highlights {
