@@ -1,5 +1,6 @@
 body {
 	background: #fff;
+    color: #616161;
 	font: 16px 'Open Sans', Helvetica, Arial, sans-serif;
 	line-height: 1.4;
 	margin: 0 0;
@@ -63,6 +64,7 @@ blockquote {
 /* section / line breaks */
 section h2 {
 	font-size: 140%;
+    letter-spacing: 0.06em;
 	margin: 0 0 0.5em;
 	text-transform: uppercase;
 	color: #BC1B39;
@@ -71,7 +73,7 @@ section h2 {
 
 /* Experience items */
 .item {
-	margin: 0 0 1em;
+	margin: 0 0 1em 1em;
 	padding: 0 0 1em;
 	border-bottom: 1px solid #F2EBEC;
 }
@@ -131,10 +133,12 @@ section h2 {
 
 .item .whatIDid {
     font-weight: 600;
+    margin: 0;
 }
 
 .item .highlights {
-	list-style: square;
+    margin-top: 0;
+	list-style: circle;
 	font-size: 90%;
 }
 

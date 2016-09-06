@@ -153,7 +153,7 @@
 			{{/if}}
 			{{#if techUsed}}
 			<div class="techUsed">
-                <p><span class="techUsedTitle">Tech Used:&nbsp</span>{{ techUsed }}</p>
+                <p><span class="techUsedTitle">Tech:&nbsp</span>{{ techUsed }}</p>
 			</div>
 			{{/if}}
 			{{#if highlights.length}}
