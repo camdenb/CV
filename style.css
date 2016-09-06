@@ -67,7 +67,7 @@ blockquote {
 /* section / line breaks */
 section h2 {
 	font-size: 140%;
-	margin: 0 0 1em;
+	margin: 0 0 0.5em;
 	text-transform: uppercase;
 	color: #BC1B39;
 	font-weight: 400;
@@ -84,9 +84,12 @@ section h2 {
 	border-bottom: none;
 }
 
+.item header {
+    display: inline-block;
+}
 
 .item header h3 {
-	margin: 0.2em 1em 0.2em 0;
+	margin: 0.2em 0 0.2em 0;
 	display: inline-block;
 	font-weight: 600;
 }
@@ -96,14 +99,28 @@ section h2 {
 }
 
 .item .position {
-	font-weight: 600;
+    display: block;
+	font-weight: 400;
 	font-size: 100%;
-	margin: 0.2em 1em 0.2em 0;
+    font-style: italic;
 }
 
-.item .startDate,
-.item .endDate {
+.separator {
+    margin: 0 0.5em 0 0.5em;
+}
+
+.separator::after {
+    content: "\00b7";
+}
+
+.date .startDate,
+.date .endDate {
 	color: #6B6B6B;
+    font-weight: 400;
+}
+
+.item .date {
+    display: inline-block;
 }
 
 .item .highlights {
@@ -137,7 +154,6 @@ section h2 {
 #education .item {
 	display: inline-block;
 	vertical-align: top;
-	width: 49.5%;
 	border-bottom: 0;
 }
 

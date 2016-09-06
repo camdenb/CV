@@ -105,30 +105,39 @@
 					<h3 class="name">{{company}}</h3>
 				{{/if}}
 			</header>
+            <span class="separator"></span>
+            <div class="date">
+                {{#if startDate}}
+                <span class="startDate">
+                    {{date startDate}}
+                </span>
+                {{/if}}
+                {{#if endDate}}
+                <span class="endDate">
+                    - {{date endDate}}
+                </span>
+                {{else}}
+                <span class="endDate">
+                    - Present
+                </span>
+                {{/if}}
+            </div>
+
 			{{#if position}}
 			<span class="position">
 				{{position}}
 			</span>
 			{{/if}}
 
-			{{#if startDate}}
-			<span class="startDate">
-				{{date startDate}}
-			</span>
-			{{/if}}
-			{{#if endDate}}
-			<span class="endDate">
-				- {{date endDate}}
-			</span>
-			{{else}}
-			<span class="endDate">
-				- Present
-			</span>
-			{{/if}}
 
 			{{#if summary}}
 			<div class="summary">
 				<p>{{paragraphSplit summary}}</p>
+			</div>
+			{{/if}}
+			{{#if techUsed}}
+			<div class="techUsed">
+                <p>{{ techUsed }}</p>
 			</div>
 			{{/if}}
 			{{#if highlights.length}}
@@ -208,7 +217,7 @@
 					{{date startDate}}
 				</span>
 				{{/if}}
-				{{#if endDate}}
+				{{#is_date_or_present endDate }}
 				<span class="endDate">
 					- {{date endDate}}
 				</span>
@@ -216,7 +225,7 @@
 				<span class="endDate">
 					- Present
 				</span>
-				{{/if}}
+				{{/is_date_or_present}}
 			</div>
 
 			<div class="qualification">
