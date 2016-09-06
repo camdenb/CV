@@ -15,7 +15,7 @@ function render(resume) {
     });
 
     Handlebars.registerHelper('is_date_or_present', function(string, options) {
-        if (string === "Present") {
+        if (string.indexOf("Present") != -1) {
             return options.inverse(this);
         } else {
             return options.fn(this);

@@ -5,6 +5,7 @@ body {
 	line-height: 1.4;
 	margin: 0 0;
 	margin-bottom: 100px;
+    text-align:center;
 }
 em {
 	color: #999;
@@ -30,8 +31,10 @@ blockquote {
 	margin-bottom: 1em;
 }
 #resume {
-	margin: 2em 2em 2em 2.5em;
+    width: 80%;
+    margin: 0 auto;
 	max-width: 760px;
+    text-align: left;
 }
 
 /* Resume heading */
@@ -40,7 +43,7 @@ blockquote {
 }
 
 .heading header h1 {
-	font-size: 180%;
+	font-size: 220%;
 	margin: 0.5em 0;
 	font-weight: 600;
 }
@@ -90,6 +93,7 @@ section h2 {
 	margin: 0.2em 0 0.2em 0;
 	display: inline-block;
 	font-weight: 600;
+    font-size: 120%;
 }
 
 .item header a {
@@ -112,21 +116,35 @@ section h2 {
 }
 
 .date .startDate,
+.date .endDateAppendedText,
 .date .endDate {
 	color: #6B6B6B;
-    font-weight: 400;
+    font-weight: 200;
+}
+
+.date .endDateAppendedText {
+    font-style: italic;
 }
 
 .item .date {
     display: inline-block;
 }
 
-.item .techUsed p {
+.item .specificFields {
+    margin-left: 0.5em;
+    width: 65%;
+}
+
+.item .subHeader {
+    margin-top: 0.25em;
+}
+
+.item .subHeader p {
     display: inline-block;
     margin: 0;
 }
 
-.item .techUsedTitle {
+.item .subHeaderTitle {
     display: inline-block;
     font-weight: 600;
 }
@@ -138,8 +156,10 @@ section h2 {
 
 .item .highlights {
     margin-top: 0;
-	list-style: circle;
+	list-style: circle inside;
 	font-size: 90%;
+    padding-left: 3em;
+    text-indent: -2em;
 }
 
 /* skills */
@@ -169,6 +189,10 @@ section h2 {
 	display: inline-block;
 	vertical-align: top;
 	border-bottom: 0;
+}
+
+.qualification {
+    font-style: italic;
 }
 
 

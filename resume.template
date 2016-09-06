@@ -151,19 +151,23 @@
 				<p>{{paragraphSplit summary}}</p>
 			</div>
 			{{/if}}
-			{{#if techUsed}}
-			<div class="techUsed">
-                <p><span class="techUsedTitle">Tech:&nbsp</span>{{ techUsed }}</p>
-			</div>
-			{{/if}}
-			{{#if highlights.length}}
-            <p class="whatIDid">What I did:</p>
-			<ul class="highlights">
-				{{#each highlights}}
-				<li>{{.}}</li>
-				{{/each}}
-			</ul>
-			{{/if}}
+
+
+            <div class="specificFields">
+                {{#if techUsed}}
+                <div class="subHeader">
+                    <p><span class="subHeaderTitle">Tech:&nbsp</span>{{ techUsed }}</p>
+                </div>
+                {{/if}}
+                {{#if highlights.length}}
+                <p class="whatIDid">What I did:</p>
+                <ul class="highlights">
+                    {{#each highlights}}
+                    <li>{{.}}</li>
+                    {{/each}}
+                </ul>
+                {{/if}}
+            </div>
 		</section>
 		{{/each}}
 	</section>
@@ -242,6 +246,11 @@
 				<span class="endDate">
 					- Present
 				</span>
+                {{#if appendEndDate}}
+				<span class="endDateAppendedText">
+                    {{appendEndDate}}
+				</span>
+                {{/if}}
 				{{/is_date_or_present}}
 			</div>
 
@@ -264,6 +273,20 @@
 				</span>
 				{{/if}}
 			</div>
+
+            <div class="specificFields">
+                {{#if activities}}
+                <div class="subHeader">
+                    <p><span class="subHeaderTitle">Activities:&nbsp</span>{{ activities }}</p>
+                </div>
+                {{/if}}
+
+                {{#if awards}}
+                <div class="subHeader">
+                    <p><span class="subHeaderTitle">Awards/Honors:&nbsp</span>{{ awards }}</p>
+                </div>
+                {{/if}}
+            </div>
 
 		</div>
 		{{/each}}
