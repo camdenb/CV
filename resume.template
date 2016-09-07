@@ -323,6 +323,46 @@
 	</section>
 	{{/if}}
 	
+	{{#if resume.projects.items.length}}
+	<section id="projects">
+		<h2>Projects</h2>
+        <div class="projectSubtitle">
+            <p>{{ resume.projects.subtitle }}</p>
+        </div>
+		{{#each resume.projects.items}}
+		<div class="item">
+			{{#if title}}
+			<header>
+				{{#if title}}
+					<h3 class="name">{{title}}</h3>
+				{{/if}}
+			</header>
+			{{/if}}
+            <span class="separator"></span>
+			<div class="date">
+				{{#if dateFinished}}
+				<span class="endDate">
+					{{date dateFinished}}
+				</span>
+				{{/if}}
+            </div>
+            {{#if summary}}
+			<div class="projectsSummary">
+			    <p>{{summary}}</p>
+			</div>
+            {{/if}}
+            <div class="specificFields">
+                {{#if techUsed}}
+                <div class="subHeader">
+                    <p><span class="subHeaderTitle">Tech:&nbsp</span>{{ techUsed }}</p>
+                </div>
+                {{/if}}
+            </div>
+		</div>
+		{{/each}}
+	</section>
+	{{/if}}
+
 	{{#if resume.publications.length}}
 	<section id="publications">
 		<h2>Publications</h2>

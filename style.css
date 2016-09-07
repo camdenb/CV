@@ -78,7 +78,7 @@ section h2 {
 .item {
 	margin: 0 0 1em 1em;
 	padding: 0 0 1em;
-	border-bottom: 1px solid #F2EBEC;
+	border-bottom: 1px dotted #FAE9EC;
 }
 
 .item:last-child {
@@ -130,9 +130,18 @@ section h2 {
     display: inline-block;
 }
 
+.item .summary p {
+    margin: 0.5em 0;
+}
+
+.item .projectsSummary p {
+    margin: 0;
+    font-style: italic;
+}
+
 .item .specificFields {
     margin-left: 0.5em;
-    width: 65%;
+    width: 85%;
 }
 
 .item .subHeader {
@@ -160,6 +169,12 @@ section h2 {
 	font-size: 90%;
     padding-left: 3em;
     text-indent: -2em;
+}
+
+/* projects */
+.projectSubtitle p {
+    font-style: italic;
+    margin-bottom: 1em;
 }
 
 /* skills */
