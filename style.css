@@ -1,7 +1,7 @@
 body {
 	background: #fff;
     color: #616161;
-	font: 16px 'Open Sans', Helvetica, Arial, sans-serif;
+	font: 14px 'Open Sans', Helvetica, Arial, sans-serif;
 	line-height: 1.4;
 	margin: 0 0;
 	margin-bottom: 100px;
@@ -24,7 +24,7 @@ ul {
 	margin-bottom: 0;
 }
 section {
-	margin: 1em 0 2em;
+	margin: 1em 0 1em;
 }
 blockquote {
 	margin: 0;
@@ -39,7 +39,8 @@ blockquote {
 
 /* Resume heading */
 .heading header { 
-
+    display: inline-block;
+    width: 49.5%;
 }
 
 .heading header h1 {
@@ -54,19 +55,24 @@ blockquote {
 	margin: 0 1em 0 0;
 }
 
+.contact-wrapper {
+    display: inline-block;
+    width: 49.5%;
+}
+
 .profile {
 	display: inline-block;
-	margin: 0 1em 0 0;
+	margin: 0;
 }
 
 .profile strong,
 .profile span {
 	display: inline-block;
-	margin: 0 1em 0 0;
+	margin: 0;
 }
 /* section / line breaks */
 section h2 {
-	font-size: 140%;
+	font-size: 130%;
     letter-spacing: 0.06em;
 	margin: 0 0 0.5em;
 	text-transform: uppercase;
@@ -76,7 +82,7 @@ section h2 {
 
 /* Experience items */
 .item {
-	margin: 0 0 1em 1em;
+	margin: 0 0 0.5em 1em;
 	padding: 0 0 1em;
 	border-bottom: 1px dotted #FAE9EC;
 }
@@ -105,6 +111,13 @@ section h2 {
 	font-weight: 400;
 	font-size: 100%;
     font-style: italic;
+}
+
+.detail:not(:last-child):after,
+.date::before,
+.profile:not(:last-child):after {
+    content: "\00b7";
+    margin: 0 0.5em 0 0.5em;
 }
 
 .separator {
@@ -141,7 +154,7 @@ section h2 {
 
 .item .specificFields {
     margin-left: 0.5em;
-    width: 85%;
+    width: 95%;
 }
 
 .item .subHeader {
@@ -167,6 +180,7 @@ section h2 {
     margin-top: 0;
 	list-style: circle inside;
 	font-size: 90%;
+    width: 80%;
     padding-left: 3em;
     text-indent: -2em;
 }
@@ -209,5 +223,4 @@ section h2 {
 .qualification {
     font-style: italic;
 }
-
 

@@ -27,65 +27,65 @@
 	<section class="heading">
 		<header>
 			<h1>{{name}}</h1>
-			<div class="contact">
-				{{#if email}}
-				<span class="detail">
-                    {{#if iconEmail}}
-                    <i class="fa {{iconEmail}}"></i>
-                    {{/if}}
-					<a href="mailto:{{email}}">{{email}}</a>
-				</span>
-				{{/if}}
-                <span class="separator"></span>
-				{{#if phone}}
-				<span class="detail">
-                    {{#if iconPhone}}
-                    <i class="fa {{iconPhone}}"></i>
-                    {{/if}}
-					{{phone}}
-				</span>
-				{{/if}}
-                <span class="separator"></span>
-				{{#if website}}
-				<span class="detail">
-                    {{#if iconWebsite}}
-                    <i class="fa {{iconWebsite}}"></i>
-                    {{/if}}
-					<a href="{{website}}">{{website}}</a>
-				</span>
-				{{/if}}
-			</div>
 		</header>
-
 
 		{{#if summary}}
 		<p>{{paragraphSplit summary}}</p>
 		{{/if}}
 
-		{{#if profiles.length}}
-			{{#each profiles}}
-			<div class="profile">
-				{{#if network}}
-                    {{#if iconName}}
-                    <i class="fa {{iconName}}"></i>
-                    {{else}}
-                    <strong class="network">
-                        {{network}}
-                    </strong>
+        <div class="contact-wrapper">
+            <div class="contact">
+                {{#if email}}
+                <span class="detail">
+                    {{#if iconEmail}}
+                    <i class="fa {{iconEmail}}"></i>
                     {{/if}}
-				{{/if}}
-				{{#if username}}
-				<span class="username">
-					{{#if url}}
-					<a href="{{url}}">{{username}}</a>
-					{{else}}
-					{{username}}
-					{{/if}}
-				</span>
-				{{/if}}
-			</div>
-			{{/each}}
-		{{/if}}
+                    <a href="mailto:{{email}}">{{email}}</a>
+                </span>
+                {{/if}}
+                {{#if phone}}
+                <span class="detail">
+                    {{#if iconPhone}}
+                    <i class="fa {{iconPhone}}"></i>
+                    {{/if}}
+                    {{phone}}
+                </span>
+                {{/if}}
+                {{#if website}}
+                <span class="detail">
+                    {{#if iconWebsite}}
+                    <i class="fa {{iconWebsite}}"></i>
+                    {{/if}}
+                    <a href="{{website}}">{{website}}</a>
+                </span>
+                {{/if}}
+            </div>
+
+            {{#if profiles.length}}
+                {{#each profiles}}
+                <div class="profile">
+                    {{#if network}}
+                        {{#if iconName}}
+                        <i class="fa {{iconName}}"></i>
+                        {{else}}
+                        <strong class="network">
+                            {{network}}
+                        </strong>
+                        {{/if}}
+                    {{/if}}
+                    {{#if username}}
+                    <span class="username">
+                        {{#if url}}
+                        <a href="{{url}}">{{username}}</a>
+                        {{else}}
+                        {{username}}
+                        {{/if}}
+                    </span>
+                    {{/if}}
+                </div>
+                {{/each}}
+            {{/if}}
+        </div>
 
 	</section>
 	{{/resume.basics}}
@@ -122,7 +122,6 @@
 					<h3 class="name">{{company}}</h3>
 				{{/if}}
 			</header>
-            <span class="separator"></span>
             <div class="date">
                 {{#if startDate}}
                 <span class="startDate">
@@ -184,7 +183,6 @@
 					<h3 class="name">{{institution}}</h3>
 				{{/if}}
 			</header>
-            <span class="separator"></span>
             <div class="date">
                 {{#if startDate}}
                 <span class="startDate">
@@ -257,7 +255,6 @@
 					<h3 class="name">{{organization}}</h3>
 				{{/if}}
 			</header>
-            <span class="separator"></span>
             <div class="date">
                 {{#if startDate}}
                 <span class="startDate">
@@ -344,7 +341,6 @@
 				{{/if}}
 			</header>
 			{{/if}}
-            <span class="separator"></span>
 			<div class="date">
 				{{#if dateFinished}}
 				<span class="endDate">
