@@ -16,6 +16,7 @@
 
     <script src="https://use.fontawesome.com/867218ea73.js"></script>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
+	<link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css' rel='stylesheet' type='text/css'>
 	
 	</head>
 	<body>
@@ -173,54 +174,6 @@
 	</section>
 	{{/if}}
 
-	{{#if resume.volunteer.length}}
-	<section class="experience">
-		<h2>Volunteering</h2>
-		{{#each resume.volunteer}}
-		<div class="item">
-			<header>
-				{{#if organization}}
-					<h3 class="name">{{organization}}</h3>
-				{{/if}}
-			</header>
-			{{#if position}}
-			<span class="position">
-				{{position}}
-			</span>
-			{{/if}}
-
-			{{#if startDate}}
-			<span class="startDate">
-				{{date startDate}}
-			</span>
-			{{/if}}
-			{{#if endDate}}
-			<span class="endDate">
-				- {{date endDate}}
-			</span>
-			{{else}}
-			<span class="endDate">
-				- Present
-			</span>
-			{{/if}}
-
-			{{#if summary}}
-			<div class="summary">
-				<p>{{summary}}</p>
-			</div>
-			{{/if}}
-			{{#if highlights.length}}
-			<ul class="highlights">
-				{{#each highlights}}
-				<li>{{.}}</li>
-				{{/each}}
-			</ul>
-			{{/if}}
-		</div>
-		{{/each}}
-	</section>
-	{{/if}}
-	
 	{{#if resume.education.length}}
 	<section id="education">
 		<h2>Education</h2>
@@ -232,27 +185,28 @@
 				{{/if}}
 			</header>
             <span class="separator"></span>
-			<div class="date">
-				{{#if startDate}}
-				<span class="startDate">
-					{{date startDate}}
-				</span>
-				{{/if}}
-				{{#is_date_or_present endDate }}
-				<span class="endDate">
-					- {{date endDate}}
-				</span>
-				{{else}}
-				<span class="endDate">
-					- Present
-				</span>
-                {{#if appendEndDate}}
-				<span class="endDateAppendedText">
-                    {{appendEndDate}}
-				</span>
+            <div class="date">
+                {{#if startDate}}
+                <span class="startDate">
+                    {{date startDate}}
+                </span>
                 {{/if}}
-				{{/is_date_or_present}}
-			</div>
+                {{#if endDate}}
+                <span class="endDate">
+                    - {{date endDate}}
+                </span>
+                {{else}}
+                <span class="endDate">
+                    - Present
+                </span>
+                    {{#if appendEndDate}}
+                    <span class="endDateAppendedText">
+                        {{appendEndDate}}
+                    </span>
+                    {{/if}}
+                {{/if}}
+            </div>
+
 
 			<div class="qualification">
 				{{#if studyType}}
@@ -292,6 +246,58 @@
 		{{/each}}
 	</section>
 	{{/if}}
+
+	{{#if resume.volunteer.length}}
+	<section class="experience">
+		<h2>Volunteering</h2>
+		{{#each resume.volunteer}}
+		<div class="item">
+			<header>
+				{{#if organization}}
+					<h3 class="name">{{organization}}</h3>
+				{{/if}}
+			</header>
+            <span class="separator"></span>
+            <div class="date">
+                {{#if startDate}}
+                <span class="startDate">
+                    {{date startDate}}
+                </span>
+                {{/if}}
+                {{#if endDate}}
+                <span class="endDate">
+                    - {{date endDate}}
+                </span>
+                {{else}}
+                <span class="endDate">
+                    - Present
+                </span>
+                {{/if}}
+            </div>
+
+			{{#if position}}
+			<span class="position">
+				{{position}}
+			</span>
+			{{/if}}
+
+			{{#if summary}}
+			<div class="summary">
+				<p>{{summary}}</p>
+			</div>
+			{{/if}}
+			{{#if highlights.length}}
+			<ul class="highlights">
+				{{#each highlights}}
+				<li>{{.}}</li>
+				{{/each}}
+			</ul>
+			{{/if}}
+		</div>
+		{{/each}}
+	</section>
+	{{/if}}
+	
 	
 	{{#if resume.awards.length}}
 	<section id="awards">

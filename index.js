@@ -14,14 +14,6 @@ function render(resume) {
         return months[theDate.getMonth()] + ' ' + theDate.getFullYear();
     });
 
-    Handlebars.registerHelper('is_date_or_present', function(string, options) {
-        if (string.indexOf("Present") != -1) {
-            return options.inverse(this);
-        } else {
-            return options.fn(this);
-        }
-    });
-
     return Handlebars.compile(template)({
         css: css,
         resume: resume
