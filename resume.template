@@ -24,9 +24,7 @@
 	<div id="resume">
 	{{#resume.basics}}
 	<section class="heading">
-		<header class="myname">
-			<h1>{{name}}</h1>
-		</header>
+        <h1 class="myname">{{name}}</h1>
 
 		{{#if summary}}
 		<p>{{paragraphSplit summary}}</p>
