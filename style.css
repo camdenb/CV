@@ -2,10 +2,11 @@ body {
 	background: #fff;
     color: #616161;
 	font: 16px 'Open Sans', Helvetica, Arial, sans-serif;
-	line-height: 1.4;
+	line-height: 1.4em;
 	margin: 0 0;
 	margin-bottom: 100px;
     text-align:center;
+    box-sizing: border-box;
 }
 em {
 	color: #999;
@@ -25,13 +26,14 @@ ul {
 }
 section {
 	margin: 1em 0 1em;
+    clear: both;
 }
 blockquote {
 	margin: 0;
 	margin-bottom: 1em;
 }
 #resume {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
 	max-width: 760px;
     text-align: left;
@@ -40,18 +42,22 @@ blockquote {
 /* Resume heading */
 .heading header { 
     display: inline-block;
+    vertical-align: text-bottom;
 }
 
-.heading header h1 {
-	font-size: 250%;
+.myname {
+	font-size: 150%;
     margin: 0;
     float: left;
 	font-weight: 600;
 }
 
+.myname h1 {
+
+}
+
 .heading header h2 {
 	font-size: 140%;
-	margin: 0;
 	margin: 0 1em 0 0;
 }
 
@@ -73,16 +79,20 @@ blockquote {
 }
 /* section / line breaks */
 section h2 {
-	font-size: 130%;
+	font-size: 100%;
     letter-spacing: 0.06em;
 	margin: 0 0 0.5em;
 	text-transform: uppercase;
 	color: #BC1B39;
 	font-weight: 400;
+    display: inline-block;
+    width: 10%;
 }
 
 /* Experience items */
 .item {
+    float: right;
+    width: 80%;
 	margin: 0 0 0.5em 1em;
 	padding: 0 0 1em;
 	border-bottom: 1px dotted #FAE9EC;
@@ -97,7 +107,7 @@ section h2 {
 }
 
 .item header h3 {
-	margin: 0 0 0.2em 0;
+	margin: 0;
 	display: inline-block;
 	font-weight: 600;
     font-size: 120%;
@@ -129,7 +139,8 @@ section h2 {
 }
 
 .date {
-    float:right;
+    float: right;
+    text-align: right;
 }
 
 .date .startDate,
@@ -140,7 +151,7 @@ section h2 {
 }
 
 .date .endDateAppendedText {
-    font-style: italic;
+    margin-right: 0.5em;
 }
 
 .item .date {
@@ -159,10 +170,6 @@ section h2 {
 .item .specificFields {
     margin-left: 1.5em;
     width: 95%;
-}
-
-.item .subHeader {
-    margin-top: 0.25em;
 }
 
 .item .subHeader p {

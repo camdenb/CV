@@ -22,10 +22,9 @@
 	<body>
 	
 	<div id="resume">
-
 	{{#resume.basics}}
 	<section class="heading">
-		<header>
+		<header class="myname">
 			<h1>{{name}}</h1>
 		</header>
 
@@ -110,6 +109,87 @@
 	</section>
 	{{/resume.basics}}
 
+	{{#if resume.education.length}}
+	<section id="education">
+		<h2>Education</h2>
+		{{#each resume.education}}
+		<div class="item">
+			<header>
+				{{#if institution}}
+					<h3 class="name">{{institution}}</h3>
+				{{/if}}
+			</header>
+
+            <div class="date">
+                {{#if startDate}}
+                <span class="startDate">
+                    {{date startDate}}
+                </span>
+                {{/if}}
+                {{#if endDate}}
+                <span class="endDate">
+                    - {{date endDate}}
+                </span>
+                {{else}}
+                <span class="endDate">
+                    - Present
+                </span>
+                    {{#if appendEndDate}}
+                    <br/>
+                    <span class="endDateAppendedText">
+                        {{appendEndDate}}
+                    </span>
+                    {{/if}}
+                {{/if}}
+            </div>
+
+
+			<div class="qualification">
+				{{#if studyType}}
+				<span class="studyType">
+					{{studyType}}
+				</span>
+				{{/if}}
+
+				{{#if area}}
+				<span class="area">
+					in {{area}}
+				</span>
+				{{/if}}
+
+				{{#if subarea}}
+                <br/>
+				<span class="area">
+					{{subarea}}
+				</span>
+				{{/if}}
+
+				{{#if gpa}}
+				<span class="gpa">
+					GPA: {{gpa}}
+				</span>
+				{{/if}}
+			</div>
+
+            <div class="specificFields">
+                {{#if activities}}
+                <div class="subHeader">
+                    <p><span class="subHeaderTitle">Activities:&nbsp</span>{{ activities }}</p>
+                </div>
+                {{/if}}
+
+                {{#if awards}}
+                <div class="subHeader">
+                    <p><span class="subHeaderTitle">Awards/Honors:&nbsp</span>{{ awards }}</p>
+                </div>
+                {{/if}}
+            </div>
+
+		</div>
+		{{/each}}
+	</SECTION>
+	{{/if}}
+
 	{{#if resume.skills.length}}
 	<section id="skills">
 		<h2>Skills</h2>
@@ -187,78 +267,47 @@
 	</section>
 	{{/if}}
 
-	{{#if resume.education.length}}
-	<section id="education">
-		<h2>Education</h2>
-		{{#each resume.education}}
+	{{#if resume.projects.items.length}}
+	<section id="projects">
+		<h2>Projects</h2>
+        <!-- <div class="projectSubtitle"> -->
+        <!--     <p>{{ resume.projects.subtitle }}</p> -->
+        <!-- </div> -->
+		{{#each resume.projects.items}}
 		<div class="item">
+			{{#if title}}
 			<header>
-				{{#if institution}}
-					<h3 class="name">{{institution}}</h3>
+				{{#if title}}
+					<h3 class="name">{{title}}</h3>
 				{{/if}}
 			</header>
-
-            <div class="date">
-                {{#if startDate}}
-                <span class="startDate">
-                    {{date startDate}}
-                </span>
-                {{/if}}
-                {{#if endDate}}
-                <span class="endDate">
-                    - {{date endDate}}
-                </span>
-                {{else}}
-                <span class="endDate">
-                    - Present
-                </span>
-                    {{#if appendEndDate}}
-                    <span class="endDateAppendedText">
-                        {{appendEndDate}}
-                    </span>
-                    {{/if}}
-                {{/if}}
+			{{/if}}
+			<div class="date">
+				{{#if dateFinished}}
+				<span class="endDate">
+					{{date dateFinished}}
+				</span>
+				{{/if}}
             </div>
-
-
-			<div class="qualification">
-				{{#if studyType}}
-				<span class="studyType">
-					{{studyType}}
-				</span>
-				{{/if}}
-
-				{{#if area}}
-				<span class="area">
-					- {{area}}
-				</span>
-				{{/if}}
-
-				{{#if gpa}}
-				<span class="gpa">
-					GPA: {{gpa}}
-				</span>
-				{{/if}}
+            {{#if summary}}
+			<div class="projectsSummary">
+			    <p>{{summary}}</p>
 			</div>
-
+            {{/if}}
             <div class="specificFields">
-                {{#if activities}}
-                <div class="subHeader">
-                    <p><span class="subHeaderTitle">Activities:&nbsp</span>{{ activities }}</p>
-                </div>
-                {{/if}}
-
-                {{#if awards}}
-                <div class="subHeader">
-                    <p><span class="subHeaderTitle">Awards/Honors:&nbsp</span>{{ awards }}</p>
-                </div>
+                {{#if highlights.length}}
+                <ul class="highlights">
+                    {{#each highlights}}
+                    <li>{{.}}</li>
+                    {{/each}}
+                </ul>
                 {{/if}}
             </div>
-
 		</div>
 		{{/each}}
 	</section>
 	{{/if}}
+
 
 	{{#if resume.volunteer.length}}
 	<section class="experience">
@@ -298,13 +347,15 @@
 				<p>{{summary}}</p>
 			</div>
 			{{/if}}
-			{{#if highlights.length}}
-			<ul class="highlights">
-				{{#each highlights}}
-				<li>{{.}}</li>
-				{{/each}}
-			</ul>
-			{{/if}}
+            <div class="specificFields">
+                {{#if highlights.length}}
+                <ul class="highlights">
+                    {{#each highlights}}
+                    <li>{{.}}</li>
+                    {{/each}}
+                </ul>
+                {{/if}}
+            </div>
 		</div>
 		{{/each}}
 	</section>
@@ -341,45 +392,6 @@
 	</section>
 	{{/if}}
 	
-	{{#if resume.projects.items.length}}
-	<section id="projects">
-		<h2>Projects</h2>
-        <div class="projectSubtitle">
-            <p>{{ resume.projects.subtitle }}</p>
-        </div>
-		{{#each resume.projects.items}}
-		<div class="item">
-			{{#if title}}
-			<header>
-				{{#if title}}
-					<h3 class="name">{{title}}</h3>
-				{{/if}}
-			</header>
-			{{/if}}
-			<div class="date">
-				{{#if dateFinished}}
-				<span class="endDate">
-					{{date dateFinished}}
-				</span>
-				{{/if}}
-            </div>
-            {{#if summary}}
-			<div class="projectsSummary">
-			    <p>{{summary}}</p>
-			</div>
-            {{/if}}
-            <div class="specificFields">
-                {{#if techUsed}}
-                <div class="subHeader">
-                    <p><span class="subHeaderTitle">Tech:&nbsp</span>{{ techUsed }}</p>
-                </div>
-                {{/if}}
-            </div>
-		</div>
-		{{/each}}
-	</section>
-	{{/if}}
-
 	{{#if resume.publications.length}}
 	<section id="publications">
 		<h2>Publications</h2>
