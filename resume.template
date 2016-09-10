@@ -34,6 +34,22 @@
 		{{/if}}
 
         <div class="contact-wrapper">
+            <div class="location">
+                {{#location}}
+                    {{#if address}}
+                        {{address}},
+                    {{/if}}
+                    {{#if city}}
+                        {{city}},
+                    {{/if}}
+                    {{#if postalCode}}
+                        {{postalCode}}
+                    {{/if}}
+                    {{#if region}}
+                        {{region}}
+                    {{/if}}
+                {{/location}}
+            </div>
             <div class="contact">
                 {{#if email}}
                 <span class="detail">
@@ -183,6 +199,7 @@
 					<h3 class="name">{{institution}}</h3>
 				{{/if}}
 			</header>
+
             <div class="date">
                 {{#if startDate}}
                 <span class="startDate">

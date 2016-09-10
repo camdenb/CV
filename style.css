@@ -56,6 +56,7 @@ blockquote {
 }
 
 .contact-wrapper {
+    text-align: justify;
     display: inline-block;
     width: 49.5%;
 }
@@ -96,7 +97,7 @@ section h2 {
 }
 
 .item header h3 {
-	margin: 0.2em 0 0.2em 0;
+	margin: 0 0 0.2em 0;
 	display: inline-block;
 	font-weight: 600;
     font-size: 120%;
@@ -114,7 +115,6 @@ section h2 {
 }
 
 .detail:not(:last-child):after,
-.date::before,
 .profile:not(:last-child):after {
     content: "\00b7";
     margin: 0 0.5em 0 0.5em;
@@ -126,6 +126,10 @@ section h2 {
 
 .separator::after {
     content: "\00b7";
+}
+
+.date {
+    float:right;
 }
 
 .date .startDate,
@@ -213,14 +217,20 @@ section h2 {
 	vertical-align: top;
 }
 
-/* education */
-#education .item {
-	display: inline-block;
-	vertical-align: top;
-	border-bottom: 0;
-}
-
 .qualification {
     font-style: italic;
 }
 
+/* print settings */
+
+@media print {
+
+    body {
+        color: black;
+    }
+
+    .date {
+        color: black;
+    }
+
+}
