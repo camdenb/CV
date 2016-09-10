@@ -174,13 +174,7 @@
 
 
             <div class="specificFields">
-                {{#if techUsed}}
-                <div class="subHeader">
-                    <p><span class="subHeaderTitle">Tech:&nbsp</span>{{ techUsed }}</p>
-                </div>
-                {{/if}}
                 {{#if highlights.length}}
-                <p class="whatIDid">What I did:</p>
                 <ul class="highlights">
                     {{#each highlights}}
                     <li>{{.}}</li>
