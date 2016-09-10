@@ -34,21 +34,25 @@
 		{{/if}}
 
         <div class="contact-wrapper">
-            <div class="location">
-                {{#location}}
-                    {{#if address}}
-                        {{address}},
+            <div class="location-and-info">
+                <span class="detail">
+                    {{#location}}
+                        {{#if iconLocation}}
+                            <i class="fa fa-{{iconLocation}}"></i>
+                        {{/if}}
+                        {{#if city}}
+                            {{city}},
+                        {{/if}}
+                        {{#if region}}
+                            {{region}}
+                        {{/if}}
+                    {{/location}}
+                </span>
+                <span class="detail">
+                    {{#if availability}}
+                        {{availability}}
                     {{/if}}
-                    {{#if city}}
-                        {{city}},
-                    {{/if}}
-                    {{#if postalCode}}
-                        {{postalCode}}
-                    {{/if}}
-                    {{#if region}}
-                        {{region}}
-                    {{/if}}
-                {{/location}}
+                </span>
             </div>
             <div class="contact">
                 {{#if email}}
