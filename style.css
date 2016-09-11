@@ -12,7 +12,6 @@ em {
 	color: #999;
 }
 p {
-	line-height: 1.6;
 	font-size: 90%;
 }
 
@@ -93,12 +92,16 @@ section h2 {
 }
 
 /* Experience items */
-.item {
+.item,
+.note {
     float: right;
     width: 80%;
 	margin: 0 0 0.5em 1em;
-	padding: 0 0 1em;
+}
+
+.item {
 	border-bottom: 1px dotted #FAE9EC;
+	padding: 0 0 1em;
 }
 
 .item:last-child {
@@ -118,6 +121,15 @@ section h2 {
 
 .item header a {
 	display: inline-block;
+}
+
+.note {
+    display: inline-block;
+    font-style: italic;
+	margin: 0 0 0.5em 1em;
+    float: right;
+	font-weight: 400;
+	font-size: 100%;
 }
 
 .item .position {
@@ -203,28 +215,6 @@ section h2 {
 .projectSubtitle p {
     font-style: italic;
     margin-bottom: 1em;
-}
-
-/* skills */
-#skills .item {
-	margin: 0.5em 0;
-	padding: 0 0 0.5em;
-	font-size: 90%;
-}
-
-#skills .item .name {
-	font-weight: 600;
-	display: inline-block;
-	text-transform: uppercase;
-	margin: 0 1em 0 0;
-	width: 23%;
-	vertical-align: top;
-}
-
-#skills .item .keywords {
-	display: inline-block;
-	width: 70%;
-	vertical-align: top;
 }
 
 .qualification {

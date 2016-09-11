@@ -188,25 +188,21 @@
 	</SECTION>
 	{{/if}}
 
-	{{#if resume.skills.length}}
+	{{#if resume.skills.list.length}}
 	<section id="skills">
 		<h2>Skills</h2>
-		{{#each resume.skills}}
+        {{#if resume.skills.subheader}}
+            <span class="note">{{resume.skills.subheader}}</span>
+        {{/if}}
 		<div class="item">
-			{{#if name}}
-			<div class="name">
-				{{name}}
-			</div>
-			{{/if}}
-			{{#if keywords.length}}
-			<div class="keywords">
-				{{#each keywords}}
-					{{.}}{{#if @last}}{{else}},{{/if}}
-				{{/each}}
-			</div>
-			{{/if}}
+            {{#each resume.skills.list}}
+                {{#if type}}
+                <div class="subHeader">
+                    <p><span class="subHeaderTitle">{{type}}:&nbsp</span>{{ list }}</p>
+                </div>
+                {{/if}}
+            {{/each}}
 		</div>
-		{{/each}}
 	</section>
 	{{/if}}
 
@@ -268,9 +264,7 @@
 	{{#if resume.projects.items.length}}
 	<section id="projects">
 		<h2>Projects</h2>
-        <!-- <div class="projectSubtitle"> -->
-        <!--     <p>{{ resume.projects.subtitle }}</p> -->
-        <!-- </div> -->
+        <span class="note">{{resume.projects.subtitle}}</span>
 		{{#each resume.projects.items}}
 		<div class="item">
 			{{#if title}}
