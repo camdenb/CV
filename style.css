@@ -179,7 +179,6 @@ section h2 {
 
 .item .projectsSummary p {
     margin: 0;
-    font-style: italic;
 }
 
 .item .specificFields {
@@ -206,15 +205,8 @@ section h2 {
     margin-top: 0;
 	list-style: circle inside;
 	font-size: 90%;
-    width: 80%;
-    padding-left: 3em;
+    padding-left: 2em;
     text-indent: -2em;
-}
-
-/* projects */
-.projectSubtitle p {
-    font-style: italic;
-    margin-bottom: 1em;
 }
 
 .qualification {
