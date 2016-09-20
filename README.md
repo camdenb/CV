@@ -1,5 +1,5 @@
 My resume!
-Forked from https://github.com/isnotahippy/jsonresume-theme-short
+Forked (and heavily modified) from https://github.com/isnotahippy/jsonresume-theme-short
 
 ## License
 

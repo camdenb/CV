@@ -83,7 +83,7 @@ section h2 {
 	margin: 0 0 0.5em;
 	text-transform: uppercase;
 	color: #BC1B39;
-	font-weight: 400;
+	font-weight: 600;
     display: inline-block;
     width: 10%;
 }
@@ -213,12 +213,10 @@ section h2 {
 
 @media print {
 
-    body {
+    body,
+    a,
+    .date,
+    .endDate {
         color: black;
     }
-
-    .date {
-        color: black;
-    }
-
 }
