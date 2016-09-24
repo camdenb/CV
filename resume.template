@@ -118,6 +118,13 @@
 				{{/if}}
 			</header>
 
+            <span class="separator"></span>
+				{{#if gpa}}
+				<span class="gpa">
+					GPA: {{gpa}}
+				</span>
+				{{/if}}
+
             <div class="date">
                 {{#if startDate}}
                 <span class="startDate">
@@ -143,6 +150,13 @@
 
 
 			<div class="qualification">
+				{{#if college}}
+				<span class="studyType">
+					{{college}}
+				</span>
+                <br/>
+				{{/if}}
+
 				{{#if studyType}}
 				<span class="studyType">
 					{{studyType}}
@@ -153,18 +167,12 @@
 				<span class="area">
 					in {{area}}
 				</span>
+                <br/>
 				{{/if}}
 
 				{{#if subarea}}
-                <br/>
 				<span class="area">
 					{{subarea}}
-				</span>
-				{{/if}}
-
-				{{#if gpa}}
-				<span class="gpa">
-					GPA: {{gpa}}
 				</span>
 				{{/if}}
 			</div>
@@ -442,22 +450,9 @@
 	{{#if resume.interests.length}}
 	<section id="interests">
 		<h2>Interests</h2>
-		{{#each resume.interests}}
 		<div class="item">
-			{{#if name}}
-			<div class="name">
-				{{name}}
-			</div>
-			{{/if}}
-			{{#if keywords.length}}
-			<ul class="keywords">
-				{{#each keywords}}
-				<li>{{.}}</li>
-				{{/each}}
-			</ul>
-			{{/if}}
+            {{ resume.interests }}
 		</div>
-		{{/each}}
 	</section>
 	{{/if}}
 	
